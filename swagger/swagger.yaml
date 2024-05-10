@@ -1,13 +1,13 @@
 basePath: /goodsCenterLogic
 definitions:
-  github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetOneResponse:
+  _internal_api_http_dto.ExampleGetOneResponse:
     properties:
       code:
         description: 'code:  0 成功; 非0失败;'
         example: 1
         type: integer
       data:
-        $ref: '#/definitions/github_com_yituoshiniao_gin-api-http_internal_api_http_dto.UserPortraitData'
+        $ref: '#/definitions/_internal_api_http_dto.UserPortraitData'
       msg:
         description: 错误消息
         example: success
@@ -21,14 +21,14 @@ definitions:
     - msg
     - traceId
     type: object
-  github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetResponse:
+  _internal_api_http_dto.ExampleGetResponse:
     properties:
       code:
         description: 'code:  0 成功; 非0失败;'
         example: 1
         type: integer
       data:
-        $ref: '#/definitions/github_com_yituoshiniao_gin-api-http_internal_api_http_dto.UserPortraitData'
+        $ref: '#/definitions/_internal_api_http_dto.UserPortraitData'
       msg:
         description: 错误消息
         example: success
@@ -42,7 +42,7 @@ definitions:
     - msg
     - traceId
     type: object
-  github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExamplePostRequest:
+  _internal_api_http_dto.ExamplePostRequest:
     properties:
       app_id:
         description: AppID 应用id
@@ -90,14 +90,14 @@ definitions:
     - question
     - token
     type: object
-  github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExamplePostResponse:
+  _internal_api_http_dto.ExamplePostResponse:
     properties:
       code:
         description: 'code:  0 成功; 非0失败;'
         example: 1
         type: integer
       data:
-        $ref: '#/definitions/github_com_yituoshiniao_gin-api-http_internal_api_http_dto.UserPortraitData'
+        $ref: '#/definitions/_internal_api_http_dto.UserPortraitData'
       msg:
         description: 错误消息
         example: success
@@ -111,7 +111,7 @@ definitions:
     - msg
     - traceId
     type: object
-  github_com_yituoshiniao_gin-api-http_internal_api_http_dto.UserPortraitData:
+  _internal_api_http_dto.UserPortraitData:
     properties:
       country:
         description: 国家
@@ -205,7 +205,7 @@ paths:
         "200":
           description: 请求成功
           schema:
-            $ref: '#/definitions/github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetResponse'
+            $ref: '#/definitions/_internal_api_http_dto.ExampleGetResponse'
       summary: get接口示例
       tags:
       - Example
@@ -232,7 +232,7 @@ paths:
         "200":
           description: 请求成功
           schema:
-            $ref: '#/definitions/github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetOneResponse'
+            $ref: '#/definitions/_internal_api_http_dto.ExampleGetOneResponse'
       summary: getOne接口示例
       tags:
       - Example
@@ -251,7 +251,7 @@ paths:
         name: body
         required: true
         schema:
-          $ref: '#/definitions/github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExamplePostRequest'
+          $ref: '#/definitions/_internal_api_http_dto.ExamplePostRequest'
       produces:
       - application/json
       responses:
@@ -268,7 +268,7 @@ paths:
               description: token2
               type: string
           schema:
-            $ref: '#/definitions/github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExamplePostResponse'
+            $ref: '#/definitions/_internal_api_http_dto.ExamplePostResponse'
       summary: post 接口 示例
       tags:
       - Example
