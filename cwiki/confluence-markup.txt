@@ -1,6 +1,6 @@
-h1. goods-center-logic API
+h1. gin-http API
 
-goods-center-logic服务文档
+gin-http服务文档
 
 *Version:* 1.0
 
@@ -83,14 +83,14 @@ h4. Responses
 
     	|| Status Code | {status:colour=Green|title=200|subtle=false} |
     	|| Message | 请求成功 |
-    	|| Response Type | internal_api_http_dto.ExampleGetResponse |
-    	|| Response Model | [internal_api_http_dto.ExampleGetResponse Model|#internal_api_http_dto.ExampleGetResponseModelAnchor|Jump to model] |
+    	|| Response Type | github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetResponse |
+    	|| Response Model | [github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetResponse Model|#github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetResponseModelAnchor|Jump to model] |
     	|| Response Schema | {code:collapse=true}{
   "description" : "请求成功",
   "content" : {
     "*/*" : {
       "schema" : {
-        "$ref" : "#/components/schemas/internal_api_http_dto.ExampleGetResponse"
+        "$ref" : "#/components/schemas/github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetResponse"
       }
     }
   }
@@ -124,14 +124,14 @@ h4. Responses
 
     	|| Status Code | {status:colour=Green|title=200|subtle=false} |
     	|| Message | 请求成功 |
-    	|| Response Type | internal_api_http_dto.ExampleGetOneResponse |
-    	|| Response Model | [internal_api_http_dto.ExampleGetOneResponse Model|#internal_api_http_dto.ExampleGetOneResponseModelAnchor|Jump to model] |
+    	|| Response Type | github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetOneResponse |
+    	|| Response Model | [github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetOneResponse Model|#github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetOneResponseModelAnchor|Jump to model] |
     	|| Response Schema | {code:collapse=true}{
   "description" : "请求成功",
   "content" : {
     "*/*" : {
       "schema" : {
-        "$ref" : "#/components/schemas/internal_api_http_dto.ExampleGetOneResponse"
+        "$ref" : "#/components/schemas/github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetOneResponse"
       }
     }
   }
@@ -165,7 +165,7 @@ h4. Parameters
 
 h5. Body Parameter
         ||Name||Description||Type||Required||Default||Pattern||Enum||Example||
-        |body |请求参数 | InternalApiHttpDtoExamplePostRequest | (/) | |  |  |
+        |body |请求参数 | GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest | (/) | |  |  |
 
 
 ----
@@ -173,8 +173,8 @@ h4. Responses
 
     	|| Status Code | {status:colour=Green|title=200|subtle=false} |
     	|| Message | 请求成功 |
-    	|| Response Type | internal_api_http_dto.ExamplePostResponse |
-    	|| Response Model | [internal_api_http_dto.ExamplePostResponse Model|#internal_api_http_dto.ExamplePostResponseModelAnchor|Jump to model] |
+    	|| Response Type | github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExamplePostResponse |
+    	|| Response Model | [github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExamplePostResponse Model|#github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExamplePostResponseModelAnchor|Jump to model] |
     	|| Response Schema | {code:collapse=true}{
   "description" : "请求成功",
   "headers" : {
@@ -200,7 +200,7 @@ h4. Responses
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/internal_api_http_dto.ExamplePostResponse"
+        "$ref" : "#/components/schemas/github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExamplePostResponse"
       }
     }
   }
@@ -213,32 +213,32 @@ h4. Responses
 {anchor:models}
 h2. Models
 
-        {anchor:InternalApiHttpDtoExampleGetOneResponseModelAnchor}
-        h3. InternalApiHttpDtoExampleGetOneResponse
+        {anchor:GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExampleGetOneResponseModelAnchor}
+        h3. GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExampleGetOneResponse
 
         
 
         
         ||Field Name||Required||Type||Description||Enum||Example||
          |code |(/) |{noformat:nopanel=true}Integer{noformat} | code:  0 成功; 非0失败; |  | 1
-         |data |(/) |{noformat:nopanel=true}internal_api_http_dto.UserPortraitData{noformat} |  |  | null
+         |data |(/) |{noformat:nopanel=true}github_com_yituoshiniao_gin-api-http_internal_api_http_dto.UserPortraitData{noformat} |  |  | null
          |msg |(/) |{noformat:nopanel=true}String{noformat} | 错误消息 |  | success
          |traceId |(/) |{noformat:nopanel=true}String{noformat} | traceId |  | null
          
-        {anchor:InternalApiHttpDtoExampleGetResponseModelAnchor}
-        h3. InternalApiHttpDtoExampleGetResponse
+        {anchor:GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExampleGetResponseModelAnchor}
+        h3. GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExampleGetResponse
 
         
 
         
         ||Field Name||Required||Type||Description||Enum||Example||
          |code |(/) |{noformat:nopanel=true}Integer{noformat} | code:  0 成功; 非0失败; |  | 1
-         |data |(/) |{noformat:nopanel=true}internal_api_http_dto.UserPortraitData{noformat} |  |  | null
+         |data |(/) |{noformat:nopanel=true}github_com_yituoshiniao_gin-api-http_internal_api_http_dto.UserPortraitData{noformat} |  |  | null
          |msg |(/) |{noformat:nopanel=true}String{noformat} | 错误消息 |  | success
          |traceId |(/) |{noformat:nopanel=true}String{noformat} | traceId |  | null
          
-        {anchor:InternalApiHttpDtoExamplePostRequestModelAnchor}
-        h3. InternalApiHttpDtoExamplePostRequest
+        {anchor:GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequestModelAnchor}
+        h3. GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest
 
         
 
@@ -261,20 +261,20 @@ h2. Models
          |show_gpt_2 |(x) |{noformat:nopanel=true}String{noformat} | show_gpt_2 |  | null
          |token |(/) |{noformat:nopanel=true}String{noformat} | Token 鉴权token |  | sdfsdsdfsd
          
-        {anchor:InternalApiHttpDtoExamplePostResponseModelAnchor}
-        h3. InternalApiHttpDtoExamplePostResponse
+        {anchor:GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostResponseModelAnchor}
+        h3. GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostResponse
 
         
 
         
         ||Field Name||Required||Type||Description||Enum||Example||
          |code |(/) |{noformat:nopanel=true}Integer{noformat} | code:  0 成功; 非0失败; |  | 1
-         |data |(/) |{noformat:nopanel=true}internal_api_http_dto.UserPortraitData{noformat} |  |  | null
+         |data |(/) |{noformat:nopanel=true}github_com_yituoshiniao_gin-api-http_internal_api_http_dto.UserPortraitData{noformat} |  |  | null
          |msg |(/) |{noformat:nopanel=true}String{noformat} | 错误消息 |  | success
          |traceId |(/) |{noformat:nopanel=true}String{noformat} | traceId |  | null
          
-        {anchor:InternalApiHttpDtoUserPortraitDataModelAnchor}
-        h3. InternalApiHttpDtoUserPortraitData
+        {anchor:GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoUserPortraitDataModelAnchor}
+        h3. GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoUserPortraitData
 
         
 
