@@ -165,14 +165,14 @@ h4. Responses
 
     	|| Status Code | {status:colour=Green|title=200|subtle=false} |
     	|| Message | 请求成功 |
-    	|| Response Type | _internal_api_dto.AppJwtTokenResponse |
-    	|| Response Model | [_internal_api_dto.AppJwtTokenResponse Model|#_internal_api_dto.AppJwtTokenResponseModelAnchor|Jump to model] |
+    	|| Response Type | _internal_api_dto.AppJwtTokenSwgResponse |
+    	|| Response Model | [_internal_api_dto.AppJwtTokenSwgResponse Model|#_internal_api_dto.AppJwtTokenSwgResponseModelAnchor|Jump to model] |
     	|| Response Schema | {code:collapse=true}{
   "description" : "请求成功",
   "content" : {
     "*/*" : {
       "schema" : {
-        "$ref" : "#/components/schemas/_internal_api_dto.AppJwtTokenResponse"
+        "$ref" : "#/components/schemas/_internal_api_dto.AppJwtTokenSwgResponse"
       }
     }
   }
@@ -333,6 +333,196 @@ h4. Responses
 {panel}
 
 
+
+h3. v1UserScoreAddPost
+{panel:title=v1UserScoreAddPost|borderStyle=solid|borderColor=#003b6f|titleBGColor=#003b6f|titleColor=#a6b8c7|bgColor=#ffffff}
+    *Summary:* 添加数据
+    *Description:* gorm 添加数据
+
+	|| HttpMethod | {status:colour=Yellow|title=post|subtle=false} |
+    || Protocol | {noformat:nopanel=true}http{noformat} |
+    || Path | {noformat:nopanel=true}/v1/userScore/add{noformat} |
+    || Base Path | {noformat:nopanel=true}http://127.0.0.1:3013/goodsCenterLogic{noformat} |
+    || Produces | {noformat:nopanel=true}*/* {noformat} |
+----
+h4. Parameters
+
+
+
+----
+h4. Responses
+
+    	|| Status Code | {status:colour=Green|title=200|subtle=false} |
+    	|| Message | 请求成功 |
+    	|| Response Type | _internal_api_http.ResponseData |
+    	|| Response Model | [_internal_api_http.ResponseData Model|#_internal_api_http.ResponseDataModelAnchor|Jump to model] |
+    	|| Response Schema | {code:collapse=true}{
+  "description" : "请求成功",
+  "content" : {
+    "*/*" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/_internal_api_http.ResponseData"
+      }
+    }
+  }
+}{code} |
+       
+
+{panel}
+
+
+
+h3. v1UserScoreDelPost
+{panel:title=v1UserScoreDelPost|borderStyle=solid|borderColor=#003b6f|titleBGColor=#003b6f|titleColor=#a6b8c7|bgColor=#ffffff}
+    *Summary:* 删除数据
+    *Description:* gorm 删除数据
+
+	|| HttpMethod | {status:colour=Yellow|title=post|subtle=false} |
+    || Protocol | {noformat:nopanel=true}http{noformat} |
+    || Path | {noformat:nopanel=true}/v1/userScore/del{noformat} |
+    || Base Path | {noformat:nopanel=true}http://127.0.0.1:3013/goodsCenterLogic{noformat} |
+    || Produces | {noformat:nopanel=true}*/* {noformat} |
+----
+h4. Parameters
+
+
+
+----
+h4. Responses
+
+    	|| Status Code | {status:colour=Green|title=200|subtle=false} |
+    	|| Message | 请求成功 |
+    	|| Response Type | _internal_api_http.ResponseData |
+    	|| Response Model | [_internal_api_http.ResponseData Model|#_internal_api_http.ResponseDataModelAnchor|Jump to model] |
+    	|| Response Schema | {code:collapse=true}{
+  "description" : "请求成功",
+  "content" : {
+    "*/*" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/_internal_api_http.ResponseData"
+      }
+    }
+  }
+}{code} |
+       
+
+{panel}
+
+
+
+h3. v1UserScoreFindGet
+{panel:title=v1UserScoreFindGet|borderStyle=solid|borderColor=#003b6f|titleBGColor=#003b6f|titleColor=#a6b8c7|bgColor=#ffffff}
+    *Summary:* 查询一条数据
+    *Description:* gorm 查询一条数据
+
+	|| HttpMethod | {status:colour=Yellow|title=get|subtle=false} |
+    || Protocol | {noformat:nopanel=true}http{noformat} |
+    || Path | {noformat:nopanel=true}/v1/userScore/find{noformat} |
+    || Base Path | {noformat:nopanel=true}http://127.0.0.1:3013/goodsCenterLogic{noformat} |
+    || Produces | {noformat:nopanel=true}*/* {noformat} |
+----
+h4. Parameters
+
+
+
+----
+h4. Responses
+
+    	|| Status Code | {status:colour=Green|title=200|subtle=false} |
+    	|| Message | 请求成功 |
+    	|| Response Type | _internal_api_dto.UserScoreFindResponse |
+    	|| Response Model | [_internal_api_dto.UserScoreFindResponse Model|#_internal_api_dto.UserScoreFindResponseModelAnchor|Jump to model] |
+    	|| Response Schema | {code:collapse=true}{
+  "description" : "请求成功",
+  "content" : {
+    "*/*" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/_internal_api_dto.UserScoreFindResponse"
+      }
+    }
+  }
+}{code} |
+       
+
+{panel}
+
+
+
+h3. v1UserScoreListGet
+{panel:title=v1UserScoreListGet|borderStyle=solid|borderColor=#003b6f|titleBGColor=#003b6f|titleColor=#a6b8c7|bgColor=#ffffff}
+    *Summary:* 查询列表
+    *Description:* gorm 查询列表
+
+	|| HttpMethod | {status:colour=Yellow|title=get|subtle=false} |
+    || Protocol | {noformat:nopanel=true}http{noformat} |
+    || Path | {noformat:nopanel=true}/v1/userScore/list{noformat} |
+    || Base Path | {noformat:nopanel=true}http://127.0.0.1:3013/goodsCenterLogic{noformat} |
+    || Produces | {noformat:nopanel=true}*/* {noformat} |
+----
+h4. Parameters
+
+
+
+----
+h4. Responses
+
+    	|| Status Code | {status:colour=Green|title=200|subtle=false} |
+    	|| Message | 请求成功 |
+    	|| Response Type | _internal_api_dto.UserScoreListResponse |
+    	|| Response Model | [_internal_api_dto.UserScoreListResponse Model|#_internal_api_dto.UserScoreListResponseModelAnchor|Jump to model] |
+    	|| Response Schema | {code:collapse=true}{
+  "description" : "请求成功",
+  "content" : {
+    "*/*" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/_internal_api_dto.UserScoreListResponse"
+      }
+    }
+  }
+}{code} |
+       
+
+{panel}
+
+
+
+h3. v1UserScoreUpdatePost
+{panel:title=v1UserScoreUpdatePost|borderStyle=solid|borderColor=#003b6f|titleBGColor=#003b6f|titleColor=#a6b8c7|bgColor=#ffffff}
+    *Summary:* 更新数据
+    *Description:* gorm 更新数据
+
+	|| HttpMethod | {status:colour=Yellow|title=post|subtle=false} |
+    || Protocol | {noformat:nopanel=true}http{noformat} |
+    || Path | {noformat:nopanel=true}/v1/userScore/update{noformat} |
+    || Base Path | {noformat:nopanel=true}http://127.0.0.1:3013/goodsCenterLogic{noformat} |
+    || Produces | {noformat:nopanel=true}*/* {noformat} |
+----
+h4. Parameters
+
+
+
+----
+h4. Responses
+
+    	|| Status Code | {status:colour=Green|title=200|subtle=false} |
+    	|| Message | 请求成功 |
+    	|| Response Type | _internal_api_http.ResponseData |
+    	|| Response Model | [_internal_api_http.ResponseData Model|#_internal_api_http.ResponseDataModelAnchor|Jump to model] |
+    	|| Response Schema | {code:collapse=true}{
+  "description" : "请求成功",
+  "content" : {
+    "*/*" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/_internal_api_http.ResponseData"
+      }
+    }
+  }
+}{code} |
+       
+
+{panel}
+
+
 {anchor:models}
 h2. Models
 
@@ -345,6 +535,18 @@ h2. Models
         ||Field Name||Required||Type||Description||Enum||Example||
          |jwtPayload |(x) |{noformat:nopanel=true}_internal_module_auth_application_service.AuthPayload{noformat} | token payload 信息 |  | null
          |token |(x) |{noformat:nopanel=true}String{noformat} | Token jwt token |  | null
+         
+        {anchor:InternalApiDtoAppJwtTokenSwgResponseModelAnchor}
+        h3. InternalApiDtoAppJwtTokenSwgResponse
+
+        
+
+        
+        ||Field Name||Required||Type||Description||Enum||Example||
+         |code |(/) |{noformat:nopanel=true}Integer{noformat} | code:  0 成功; 非0失败; |  | 1
+         |data |(/) |{noformat:nopanel=true}_internal_api_dto.AppJwtTokenResponse{noformat} |  |  | null
+         |msg |(/) |{noformat:nopanel=true}String{noformat} | 错误消息 |  | success
+         |traceId |(/) |{noformat:nopanel=true}String{noformat} | traceId |  | null
          
         {anchor:InternalApiDtoAsynqEmailDeliveryTaskAddResponseModelAnchor}
         h3. InternalApiDtoAsynqEmailDeliveryTaskAddResponse
@@ -442,6 +644,42 @@ h2. Models
          |user_id |(x) |{noformat:nopanel=true}String{noformat} | 用户id |  | null
          |vip_info |(x) |{noformat:nopanel=true}Integer{noformat} | 是否为VIP，0/1 |  | null
          
+        {anchor:InternalApiDtoUserScoreFindResponseModelAnchor}
+        h3. InternalApiDtoUserScoreFindResponse
+
+        
+
+        
+        ||Field Name||Required||Type||Description||Enum||Example||
+         |code |(/) |{noformat:nopanel=true}Integer{noformat} | code:  0 成功; 非0失败; |  | 1
+         |data |(/) |{noformat:nopanel=true}_internal_module_mockv2_application_entity.UserScore{noformat} |  |  | null
+         |msg |(/) |{noformat:nopanel=true}String{noformat} | 错误消息 |  | success
+         |traceId |(/) |{noformat:nopanel=true}String{noformat} | traceId |  | null
+         
+        {anchor:InternalApiDtoUserScoreListResponseModelAnchor}
+        h3. InternalApiDtoUserScoreListResponse
+
+        
+
+        
+        ||Field Name||Required||Type||Description||Enum||Example||
+         |code |(/) |{noformat:nopanel=true}Integer{noformat} | code:  0 成功; 非0失败; |  | 1
+         |data |(/) |{noformat:nopanel=true}array[_internal_module_mockv2_application_entity.UserScore]{noformat} |  |  | null
+         |msg |(/) |{noformat:nopanel=true}String{noformat} | 错误消息 |  | success
+         |traceId |(/) |{noformat:nopanel=true}String{noformat} | traceId |  | null
+         
+        {anchor:InternalApiHttpResponseDataModelAnchor}
+        h3. InternalApiHttpResponseData
+
+        
+
+        
+        ||Field Name||Required||Type||Description||Enum||Example||
+         |code |(/) |{noformat:nopanel=true}Integer{noformat} | code:  0 成功; 非0失败; |  | 1
+         |data |(/) |{noformat:nopanel=true}Object{noformat} | 数据data |  | null
+         |msg |(/) |{noformat:nopanel=true}String{noformat} | 错误消息 |  | success
+         |traceId |(/) |{noformat:nopanel=true}String{noformat} | traceId |  | null
+         
         {anchor:InternalApiHttpServicev1HttpGenerateIDResponseModelAnchor}
         h3. InternalApiHttpServicev1HttpGenerateIDResponse
 
@@ -472,4 +710,19 @@ h2. Models
          |sub |(x) |{noformat:nopanel=true}String{noformat} |  |  | null
          |uid |(x) |{noformat:nopanel=true}String{noformat} | UID 用户id |  | null
          |username |(x) |{noformat:nopanel=true}String{noformat} | Username 用户名 |  | null
+         
+        {anchor:InternalModuleMockv2ApplicationEntityUserScoreModelAnchor}
+        h3. InternalModuleMockv2ApplicationEntityUserScore
+
+        
+
+        
+        ||Field Name||Required||Type||Description||Enum||Example||
+         |create_time |(x) |{noformat:nopanel=true}Integer{noformat} |  |  | null
+         |id |(x) |{noformat:nopanel=true}Integer{noformat} |  |  | null
+         |score |(x) |{noformat:nopanel=true}Integer{noformat} |  |  | null
+         |score_result |(x) |{noformat:nopanel=true}Integer{noformat} |  |  | null
+         |update_time |(x) |{noformat:nopanel=true}Integer{noformat} |  |  | null
+         |user_id |(x) |{noformat:nopanel=true}String{noformat} |  |  | null
+         |zero_timestamp |(x) |{noformat:nopanel=true}Integer{noformat} |  |  | null
          

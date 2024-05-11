@@ -99,7 +99,7 @@ const docTemplate = `{
                     "200": {
                         "description": "请求成功",
                         "schema": {
-                            "$ref": "#/definitions/_internal_api_dto.AppJwtTokenResponse"
+                            "$ref": "#/definitions/_internal_api_dto.AppJwtTokenSwgResponse"
                         }
                     }
                 }
@@ -270,6 +270,91 @@ const docTemplate = `{
                     }
                 }
             }
+        },
+        "/v1/userScore/add": {
+            "post": {
+                "description": "gorm 添加数据",
+                "tags": [
+                    "user_score"
+                ],
+                "summary": "添加数据",
+                "responses": {
+                    "200": {
+                        "description": "请求成功",
+                        "schema": {
+                            "$ref": "#/definitions/_internal_api_http.ResponseData"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/userScore/del": {
+            "post": {
+                "description": "gorm 删除数据",
+                "tags": [
+                    "user_score"
+                ],
+                "summary": "删除数据",
+                "responses": {
+                    "200": {
+                        "description": "请求成功",
+                        "schema": {
+                            "$ref": "#/definitions/_internal_api_http.ResponseData"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/userScore/find": {
+            "get": {
+                "description": "gorm 查询一条数据",
+                "tags": [
+                    "user_score"
+                ],
+                "summary": "查询一条数据",
+                "responses": {
+                    "200": {
+                        "description": "请求成功",
+                        "schema": {
+                            "$ref": "#/definitions/_internal_api_dto.UserScoreFindResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/userScore/list": {
+            "get": {
+                "description": "gorm 查询列表",
+                "tags": [
+                    "user_score"
+                ],
+                "summary": "查询列表",
+                "responses": {
+                    "200": {
+                        "description": "请求成功",
+                        "schema": {
+                            "$ref": "#/definitions/_internal_api_dto.UserScoreListResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/userScore/update": {
+            "post": {
+                "description": "gorm 更新数据",
+                "tags": [
+                    "user_score"
+                ],
+                "summary": "更新数据",
+                "responses": {
+                    "200": {
+                        "description": "请求成功",
+                        "schema": {
+                            "$ref": "#/definitions/_internal_api_http.ResponseData"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -286,6 +371,34 @@ const docTemplate = `{
                 },
                 "token": {
                     "description": "Token jwt token",
+                    "type": "string"
+                }
+            }
+        },
+        "_internal_api_dto.AppJwtTokenSwgResponse": {
+            "type": "object",
+            "required": [
+                "code",
+                "data",
+                "msg",
+                "traceId"
+            ],
+            "properties": {
+                "code": {
+                    "description": "code:  0 成功; 非0失败;",
+                    "type": "integer",
+                    "example": 1
+                },
+                "data": {
+                    "$ref": "#/definitions/_internal_api_dto.AppJwtTokenResponse"
+                },
+                "msg": {
+                    "description": "错误消息",
+                    "type": "string",
+                    "example": "success"
+                },
+                "traceId": {
+                    "description": "traceId",
                     "type": "string"
                 }
             }
@@ -503,6 +616,93 @@ const docTemplate = `{
                 }
             }
         },
+        "_internal_api_dto.UserScoreFindResponse": {
+            "type": "object",
+            "required": [
+                "code",
+                "data",
+                "msg",
+                "traceId"
+            ],
+            "properties": {
+                "code": {
+                    "description": "code:  0 成功; 非0失败;",
+                    "type": "integer",
+                    "example": 1
+                },
+                "data": {
+                    "$ref": "#/definitions/_internal_module_mockv2_application_entity.UserScore"
+                },
+                "msg": {
+                    "description": "错误消息",
+                    "type": "string",
+                    "example": "success"
+                },
+                "traceId": {
+                    "description": "traceId",
+                    "type": "string"
+                }
+            }
+        },
+        "_internal_api_dto.UserScoreListResponse": {
+            "type": "object",
+            "required": [
+                "code",
+                "data",
+                "msg",
+                "traceId"
+            ],
+            "properties": {
+                "code": {
+                    "description": "code:  0 成功; 非0失败;",
+                    "type": "integer",
+                    "example": 1
+                },
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/_internal_module_mockv2_application_entity.UserScore"
+                    }
+                },
+                "msg": {
+                    "description": "错误消息",
+                    "type": "string",
+                    "example": "success"
+                },
+                "traceId": {
+                    "description": "traceId",
+                    "type": "string"
+                }
+            }
+        },
+        "_internal_api_http.ResponseData": {
+            "type": "object",
+            "required": [
+                "code",
+                "data",
+                "msg",
+                "traceId"
+            ],
+            "properties": {
+                "code": {
+                    "description": "code:  0 成功; 非0失败;",
+                    "type": "integer",
+                    "example": 1
+                },
+                "data": {
+                    "description": "数据data"
+                },
+                "msg": {
+                    "description": "错误消息",
+                    "type": "string",
+                    "example": "success"
+                },
+                "traceId": {
+                    "description": "traceId",
+                    "type": "string"
+                }
+            }
+        },
         "_internal_module_auth_application_service.AuthPayload": {
             "type": "object",
             "properties": {
@@ -542,6 +742,32 @@ const docTemplate = `{
                 "username": {
                     "description": "Username 用户名",
                     "type": "string"
+                }
+            }
+        },
+        "_internal_module_mockv2_application_entity.UserScore": {
+            "type": "object",
+            "properties": {
+                "create_time": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "score": {
+                    "type": "integer"
+                },
+                "score_result": {
+                    "type": "integer"
+                },
+                "update_time": {
+                    "type": "integer"
+                },
+                "user_id": {
+                    "type": "string"
+                },
+                "zero_timestamp": {
+                    "type": "integer"
                 }
             }
         },

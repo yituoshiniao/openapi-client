@@ -10,6 +10,27 @@ definitions:
         description: Token jwt token
         type: string
     type: object
+  _internal_api_dto.AppJwtTokenSwgResponse:
+    properties:
+      code:
+        description: 'code:  0 成功; 非0失败;'
+        example: 1
+        type: integer
+      data:
+        $ref: '#/definitions/_internal_api_dto.AppJwtTokenResponse'
+      msg:
+        description: 错误消息
+        example: success
+        type: string
+      traceId:
+        description: traceId
+        type: string
+    required:
+    - code
+    - data
+    - msg
+    - traceId
+    type: object
   _internal_api_dto.AsynqEmailDeliveryTaskAddResponse:
     properties:
       code:
@@ -178,6 +199,71 @@ definitions:
         description: 是否为VIP，0/1
         type: integer
     type: object
+  _internal_api_dto.UserScoreFindResponse:
+    properties:
+      code:
+        description: 'code:  0 成功; 非0失败;'
+        example: 1
+        type: integer
+      data:
+        $ref: '#/definitions/_internal_module_mockv2_application_entity.UserScore'
+      msg:
+        description: 错误消息
+        example: success
+        type: string
+      traceId:
+        description: traceId
+        type: string
+    required:
+    - code
+    - data
+    - msg
+    - traceId
+    type: object
+  _internal_api_dto.UserScoreListResponse:
+    properties:
+      code:
+        description: 'code:  0 成功; 非0失败;'
+        example: 1
+        type: integer
+      data:
+        items:
+          $ref: '#/definitions/_internal_module_mockv2_application_entity.UserScore'
+        type: array
+      msg:
+        description: 错误消息
+        example: success
+        type: string
+      traceId:
+        description: traceId
+        type: string
+    required:
+    - code
+    - data
+    - msg
+    - traceId
+    type: object
+  _internal_api_http.ResponseData:
+    properties:
+      code:
+        description: 'code:  0 成功; 非0失败;'
+        example: 1
+        type: integer
+      data:
+        description: 数据data
+      msg:
+        description: 错误消息
+        example: success
+        type: string
+      traceId:
+        description: traceId
+        type: string
+    required:
+    - code
+    - data
+    - msg
+    - traceId
+    type: object
   _internal_module_auth_application_service.AuthPayload:
     properties:
       aud:
@@ -206,6 +292,23 @@ definitions:
       username:
         description: Username 用户名
         type: string
+    type: object
+  _internal_module_mockv2_application_entity.UserScore:
+    properties:
+      create_time:
+        type: integer
+      id:
+        type: integer
+      score:
+        type: integer
+      score_result:
+        type: integer
+      update_time:
+        type: integer
+      user_id:
+        type: string
+      zero_timestamp:
+        type: integer
     type: object
   internal_api_http_servicev1.HttpGenerateIDResponse:
     properties:
@@ -292,7 +395,7 @@ paths:
         "200":
           description: 请求成功
           schema:
-            $ref: '#/definitions/_internal_api_dto.AppJwtTokenResponse'
+            $ref: '#/definitions/_internal_api_dto.AppJwtTokenSwgResponse'
       summary: jwt-token生成及校验
       tags:
       - auth
@@ -411,6 +514,61 @@ paths:
       summary: post 接口 示例
       tags:
       - Example
+  /v1/userScore/add:
+    post:
+      description: gorm 添加数据
+      responses:
+        "200":
+          description: 请求成功
+          schema:
+            $ref: '#/definitions/_internal_api_http.ResponseData'
+      summary: 添加数据
+      tags:
+      - user_score
+  /v1/userScore/del:
+    post:
+      description: gorm 删除数据
+      responses:
+        "200":
+          description: 请求成功
+          schema:
+            $ref: '#/definitions/_internal_api_http.ResponseData'
+      summary: 删除数据
+      tags:
+      - user_score
+  /v1/userScore/find:
+    get:
+      description: gorm 查询一条数据
+      responses:
+        "200":
+          description: 请求成功
+          schema:
+            $ref: '#/definitions/_internal_api_dto.UserScoreFindResponse'
+      summary: 查询一条数据
+      tags:
+      - user_score
+  /v1/userScore/list:
+    get:
+      description: gorm 查询列表
+      responses:
+        "200":
+          description: 请求成功
+          schema:
+            $ref: '#/definitions/_internal_api_dto.UserScoreListResponse'
+      summary: 查询列表
+      tags:
+      - user_score
+  /v1/userScore/update:
+    post:
+      description: gorm 更新数据
+      responses:
+        "200":
+          description: 请求成功
+          schema:
+            $ref: '#/definitions/_internal_api_http.ResponseData'
+      summary: 更新数据
+      tags:
+      - user_score
 schemes:
 - http
 swagger: "2.0"
