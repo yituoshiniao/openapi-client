@@ -16,6 +16,95 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
+        "/asynq/v1/addAggTask": {
+            "get": {
+                "description": "asynq-添加聚合任务",
+                "tags": [
+                    "asynq"
+                ],
+                "summary": "asynq-添加聚合任务",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "环境变量,默认线上; sandbox 沙箱环境, production 生产环境",
+                        "name": "env",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "请求成功",
+                        "schema": {
+                            "$ref": "#/definitions/_internal_api_dto.GroupDeliveryTaskAddResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/asynq/v1/addTask": {
+            "get": {
+                "description": "asynq-异步任务,可通过： http://localhost:7013/monitoring/ 查看dashbord报表",
+                "tags": [
+                    "asynq"
+                ],
+                "summary": "asynq-add异步任务",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "环境变量,默认线上; sandbox 沙箱环境, production 生产环境",
+                        "name": "env",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "请求成功",
+                        "schema": {
+                            "$ref": "#/definitions/_internal_api_dto.AsynqEmailDeliveryTaskAddResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/v1/token/generate": {
+            "get": {
+                "description": "jwt-token生成及校验",
+                "tags": [
+                    "auth"
+                ],
+                "summary": "jwt-token生成及校验",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "环境变量,默认线上; sandbox 沙箱环境, production 生产环境",
+                        "name": "env",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "UserID 用户id",
+                        "name": "userId",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "UserName 用户名  example:张三",
+                        "name": "userName",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "请求成功",
+                        "schema": {
+                            "$ref": "#/definitions/_internal_api_dto.AppJwtTokenResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/v1/common/generateId": {
             "get": {
                 "description": "生成id-描述",
@@ -88,7 +177,7 @@ const docTemplate = `{
                     "200": {
                         "description": "请求成功",
                         "schema": {
-                            "$ref": "#/definitions/_internal_api_http_dto.ExampleGetResponse"
+                            "$ref": "#/definitions/_internal_api_dto.ExampleGetResponse"
                         }
                     }
                 }
@@ -128,7 +217,7 @@ const docTemplate = `{
                     "200": {
                         "description": "请求成功",
                         "schema": {
-                            "$ref": "#/definitions/_internal_api_http_dto.ExampleGetOneResponse"
+                            "$ref": "#/definitions/_internal_api_dto.ExampleGetOneResponse"
                         }
                     }
                 }
@@ -154,7 +243,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/_internal_api_http_dto.ExamplePostRequest"
+                            "$ref": "#/definitions/_internal_api_dto.ExamplePostRequest"
                         }
                     }
                 ],
@@ -162,7 +251,7 @@ const docTemplate = `{
                     "200": {
                         "description": "请求成功",
                         "schema": {
-                            "$ref": "#/definitions/_internal_api_http_dto.ExamplePostResponse"
+                            "$ref": "#/definitions/_internal_api_dto.ExamplePostResponse"
                         },
                         "headers": {
                             "Location": {
@@ -184,7 +273,24 @@ const docTemplate = `{
         }
     },
     "definitions": {
-        "_internal_api_http_dto.ExampleGetOneResponse": {
+        "_internal_api_dto.AppJwtTokenResponse": {
+            "type": "object",
+            "properties": {
+                "jwtPayload": {
+                    "description": "token payload 信息",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/_internal_module_auth_application_service.AuthPayload"
+                        }
+                    ]
+                },
+                "token": {
+                    "description": "Token jwt token",
+                    "type": "string"
+                }
+            }
+        },
+        "_internal_api_dto.AsynqEmailDeliveryTaskAddResponse": {
             "type": "object",
             "required": [
                 "code",
@@ -199,7 +305,7 @@ const docTemplate = `{
                     "example": 1
                 },
                 "data": {
-                    "$ref": "#/definitions/_internal_api_http_dto.UserPortraitData"
+                    "description": "数据data"
                 },
                 "msg": {
                     "description": "错误消息",
@@ -212,7 +318,7 @@ const docTemplate = `{
                 }
             }
         },
-        "_internal_api_http_dto.ExampleGetResponse": {
+        "_internal_api_dto.ExampleGetOneResponse": {
             "type": "object",
             "required": [
                 "code",
@@ -227,7 +333,7 @@ const docTemplate = `{
                     "example": 1
                 },
                 "data": {
-                    "$ref": "#/definitions/_internal_api_http_dto.UserPortraitData"
+                    "$ref": "#/definitions/_internal_api_dto.UserPortraitData"
                 },
                 "msg": {
                     "description": "错误消息",
@@ -240,7 +346,35 @@ const docTemplate = `{
                 }
             }
         },
-        "_internal_api_http_dto.ExamplePostRequest": {
+        "_internal_api_dto.ExampleGetResponse": {
+            "type": "object",
+            "required": [
+                "code",
+                "data",
+                "msg",
+                "traceId"
+            ],
+            "properties": {
+                "code": {
+                    "description": "code:  0 成功; 非0失败;",
+                    "type": "integer",
+                    "example": 1
+                },
+                "data": {
+                    "$ref": "#/definitions/_internal_api_dto.UserPortraitData"
+                },
+                "msg": {
+                    "description": "错误消息",
+                    "type": "string",
+                    "example": "success"
+                },
+                "traceId": {
+                    "description": "traceId",
+                    "type": "string"
+                }
+            }
+        },
+        "_internal_api_dto.ExamplePostRequest": {
             "type": "object",
             "required": [
                 "app_id",
@@ -292,7 +426,7 @@ const docTemplate = `{
                 }
             }
         },
-        "_internal_api_http_dto.ExamplePostResponse": {
+        "_internal_api_dto.ExamplePostResponse": {
             "type": "object",
             "required": [
                 "code",
@@ -307,7 +441,7 @@ const docTemplate = `{
                     "example": 1
                 },
                 "data": {
-                    "$ref": "#/definitions/_internal_api_http_dto.UserPortraitData"
+                    "$ref": "#/definitions/_internal_api_dto.UserPortraitData"
                 },
                 "msg": {
                     "description": "错误消息",
@@ -320,7 +454,35 @@ const docTemplate = `{
                 }
             }
         },
-        "_internal_api_http_dto.UserPortraitData": {
+        "_internal_api_dto.GroupDeliveryTaskAddResponse": {
+            "type": "object",
+            "required": [
+                "code",
+                "data",
+                "msg",
+                "traceId"
+            ],
+            "properties": {
+                "code": {
+                    "description": "code:  0 成功; 非0失败;",
+                    "type": "integer",
+                    "example": 1
+                },
+                "data": {
+                    "description": "数据data"
+                },
+                "msg": {
+                    "description": "错误消息",
+                    "type": "string",
+                    "example": "success"
+                },
+                "traceId": {
+                    "description": "traceId",
+                    "type": "string"
+                }
+            }
+        },
+        "_internal_api_dto.UserPortraitData": {
             "type": "object",
             "properties": {
                 "country": {
@@ -338,6 +500,48 @@ const docTemplate = `{
                 "vip_info": {
                     "description": "是否为VIP，0/1",
                     "type": "integer"
+                }
+            }
+        },
+        "_internal_module_auth_application_service.AuthPayload": {
+            "type": "object",
+            "properties": {
+                "aud": {
+                    "type": "string"
+                },
+                "audience": {
+                    "description": "Audience 当前时间",
+                    "type": "integer"
+                },
+                "exp": {
+                    "type": "integer"
+                },
+                "expiresAt": {
+                    "description": "ExpiresAt  token 过期时间",
+                    "type": "integer"
+                },
+                "iat": {
+                    "type": "integer"
+                },
+                "iss": {
+                    "type": "string"
+                },
+                "jti": {
+                    "type": "string"
+                },
+                "nbf": {
+                    "type": "integer"
+                },
+                "sub": {
+                    "type": "string"
+                },
+                "uid": {
+                    "description": "UID 用户id",
+                    "type": "string"
+                },
+                "username": {
+                    "description": "Username 用户名",
+                    "type": "string"
                 }
             }
         },

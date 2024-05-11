@@ -60,6 +60,129 @@ h4. Responses
 
 
 
+h3. asynqV1AddAggTaskGet
+{panel:title=asynqV1AddAggTaskGet|borderStyle=solid|borderColor=#003b6f|titleBGColor=#003b6f|titleColor=#a6b8c7|bgColor=#ffffff}
+    *Summary:* asynq-添加聚合任务
+    *Description:* asynq-添加聚合任务
+
+	|| HttpMethod | {status:colour=Yellow|title=get|subtle=false} |
+    || Protocol | {noformat:nopanel=true}http{noformat} |
+    || Path | {noformat:nopanel=true}/asynq/v1/addAggTask{noformat} |
+    || Base Path | {noformat:nopanel=true}http://127.0.0.1:3013/goodsCenterLogic{noformat} |
+    || Produces | {noformat:nopanel=true}*/* {noformat} |
+----
+h4. Parameters
+
+
+
+h5. Query Parameters
+        ||Name||Description||Type||Required||Default||Pattern||Enum||Example||
+        |env |环境变量,默认线上; sandbox 沙箱环境, production 生产环境 | String | (x) |null |  |  |
+----
+h4. Responses
+
+    	|| Status Code | {status:colour=Green|title=200|subtle=false} |
+    	|| Message | 请求成功 |
+    	|| Response Type | _internal_api_dto.GroupDeliveryTaskAddResponse |
+    	|| Response Model | [_internal_api_dto.GroupDeliveryTaskAddResponse Model|#_internal_api_dto.GroupDeliveryTaskAddResponseModelAnchor|Jump to model] |
+    	|| Response Schema | {code:collapse=true}{
+  "description" : "请求成功",
+  "content" : {
+    "*/*" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/_internal_api_dto.GroupDeliveryTaskAddResponse"
+      }
+    }
+  }
+}{code} |
+       
+
+{panel}
+
+
+
+h3. asynqV1AddTaskGet
+{panel:title=asynqV1AddTaskGet|borderStyle=solid|borderColor=#003b6f|titleBGColor=#003b6f|titleColor=#a6b8c7|bgColor=#ffffff}
+    *Summary:* asynq-add异步任务
+    *Description:* asynq-异步任务,可通过： http://localhost:7013/monitoring/ 查看dashbord报表
+
+	|| HttpMethod | {status:colour=Yellow|title=get|subtle=false} |
+    || Protocol | {noformat:nopanel=true}http{noformat} |
+    || Path | {noformat:nopanel=true}/asynq/v1/addTask{noformat} |
+    || Base Path | {noformat:nopanel=true}http://127.0.0.1:3013/goodsCenterLogic{noformat} |
+    || Produces | {noformat:nopanel=true}*/* {noformat} |
+----
+h4. Parameters
+
+
+
+h5. Query Parameters
+        ||Name||Description||Type||Required||Default||Pattern||Enum||Example||
+        |env |环境变量,默认线上; sandbox 沙箱环境, production 生产环境 | String | (x) |null |  |  |
+----
+h4. Responses
+
+    	|| Status Code | {status:colour=Green|title=200|subtle=false} |
+    	|| Message | 请求成功 |
+    	|| Response Type | _internal_api_dto.AsynqEmailDeliveryTaskAddResponse |
+    	|| Response Model | [_internal_api_dto.AsynqEmailDeliveryTaskAddResponse Model|#_internal_api_dto.AsynqEmailDeliveryTaskAddResponseModelAnchor|Jump to model] |
+    	|| Response Schema | {code:collapse=true}{
+  "description" : "请求成功",
+  "content" : {
+    "*/*" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/_internal_api_dto.AsynqEmailDeliveryTaskAddResponse"
+      }
+    }
+  }
+}{code} |
+       
+
+{panel}
+
+
+
+h3. authV1TokenGenerateGet
+{panel:title=authV1TokenGenerateGet|borderStyle=solid|borderColor=#003b6f|titleBGColor=#003b6f|titleColor=#a6b8c7|bgColor=#ffffff}
+    *Summary:* jwt-token生成及校验
+    *Description:* jwt-token生成及校验
+
+	|| HttpMethod | {status:colour=Yellow|title=get|subtle=false} |
+    || Protocol | {noformat:nopanel=true}http{noformat} |
+    || Path | {noformat:nopanel=true}/auth/v1/token/generate{noformat} |
+    || Base Path | {noformat:nopanel=true}http://127.0.0.1:3013/goodsCenterLogic{noformat} |
+    || Produces | {noformat:nopanel=true}*/* {noformat} |
+----
+h4. Parameters
+
+
+
+h5. Query Parameters
+        ||Name||Description||Type||Required||Default||Pattern||Enum||Example||
+        |env |环境变量,默认线上; sandbox 沙箱环境, production 生产环境 | String | (x) |null |  |  ||userId |UserID 用户id | String | (/) |null |  |  ||userName |UserName 用户名  example:张三 | String | (/) |null |  |  |
+----
+h4. Responses
+
+    	|| Status Code | {status:colour=Green|title=200|subtle=false} |
+    	|| Message | 请求成功 |
+    	|| Response Type | _internal_api_dto.AppJwtTokenResponse |
+    	|| Response Model | [_internal_api_dto.AppJwtTokenResponse Model|#_internal_api_dto.AppJwtTokenResponseModelAnchor|Jump to model] |
+    	|| Response Schema | {code:collapse=true}{
+  "description" : "请求成功",
+  "content" : {
+    "*/*" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/_internal_api_dto.AppJwtTokenResponse"
+      }
+    }
+  }
+}{code} |
+       
+
+{panel}
+
+
+
 h3. v1ExampleGetGet
 {panel:title=v1ExampleGetGet|borderStyle=solid|borderColor=#003b6f|titleBGColor=#003b6f|titleColor=#a6b8c7|bgColor=#ffffff}
     *Summary:* get接口示例
@@ -83,14 +206,14 @@ h4. Responses
 
     	|| Status Code | {status:colour=Green|title=200|subtle=false} |
     	|| Message | 请求成功 |
-    	|| Response Type | _internal_api_http_dto.ExampleGetResponse |
-    	|| Response Model | [_internal_api_http_dto.ExampleGetResponse Model|#_internal_api_http_dto.ExampleGetResponseModelAnchor|Jump to model] |
+    	|| Response Type | _internal_api_dto.ExampleGetResponse |
+    	|| Response Model | [_internal_api_dto.ExampleGetResponse Model|#_internal_api_dto.ExampleGetResponseModelAnchor|Jump to model] |
     	|| Response Schema | {code:collapse=true}{
   "description" : "请求成功",
   "content" : {
     "*/*" : {
       "schema" : {
-        "$ref" : "#/components/schemas/_internal_api_http_dto.ExampleGetResponse"
+        "$ref" : "#/components/schemas/_internal_api_dto.ExampleGetResponse"
       }
     }
   }
@@ -124,14 +247,14 @@ h4. Responses
 
     	|| Status Code | {status:colour=Green|title=200|subtle=false} |
     	|| Message | 请求成功 |
-    	|| Response Type | _internal_api_http_dto.ExampleGetOneResponse |
-    	|| Response Model | [_internal_api_http_dto.ExampleGetOneResponse Model|#_internal_api_http_dto.ExampleGetOneResponseModelAnchor|Jump to model] |
+    	|| Response Type | _internal_api_dto.ExampleGetOneResponse |
+    	|| Response Model | [_internal_api_dto.ExampleGetOneResponse Model|#_internal_api_dto.ExampleGetOneResponseModelAnchor|Jump to model] |
     	|| Response Schema | {code:collapse=true}{
   "description" : "请求成功",
   "content" : {
     "*/*" : {
       "schema" : {
-        "$ref" : "#/components/schemas/_internal_api_http_dto.ExampleGetOneResponse"
+        "$ref" : "#/components/schemas/_internal_api_dto.ExampleGetOneResponse"
       }
     }
   }
@@ -165,7 +288,7 @@ h4. Parameters
 
 h5. Body Parameter
         ||Name||Description||Type||Required||Default||Pattern||Enum||Example||
-        |body |请求参数 | InternalApiHttpDtoExamplePostRequest | (/) | |  |  |
+        |body |请求参数 | InternalApiDtoExamplePostRequest | (/) | |  |  |
 
 
 ----
@@ -173,8 +296,8 @@ h4. Responses
 
     	|| Status Code | {status:colour=Green|title=200|subtle=false} |
     	|| Message | 请求成功 |
-    	|| Response Type | _internal_api_http_dto.ExamplePostResponse |
-    	|| Response Model | [_internal_api_http_dto.ExamplePostResponse Model|#_internal_api_http_dto.ExamplePostResponseModelAnchor|Jump to model] |
+    	|| Response Type | _internal_api_dto.ExamplePostResponse |
+    	|| Response Model | [_internal_api_dto.ExamplePostResponse Model|#_internal_api_dto.ExamplePostResponseModelAnchor|Jump to model] |
     	|| Response Schema | {code:collapse=true}{
   "description" : "请求成功",
   "headers" : {
@@ -200,7 +323,7 @@ h4. Responses
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/_internal_api_http_dto.ExamplePostResponse"
+        "$ref" : "#/components/schemas/_internal_api_dto.ExamplePostResponse"
       }
     }
   }
@@ -213,32 +336,54 @@ h4. Responses
 {anchor:models}
 h2. Models
 
-        {anchor:InternalApiHttpDtoExampleGetOneResponseModelAnchor}
-        h3. InternalApiHttpDtoExampleGetOneResponse
+        {anchor:InternalApiDtoAppJwtTokenResponseModelAnchor}
+        h3. InternalApiDtoAppJwtTokenResponse
+
+        
+
+        
+        ||Field Name||Required||Type||Description||Enum||Example||
+         |jwtPayload |(x) |{noformat:nopanel=true}_internal_module_auth_application_service.AuthPayload{noformat} | token payload 信息 |  | null
+         |token |(x) |{noformat:nopanel=true}String{noformat} | Token jwt token |  | null
+         
+        {anchor:InternalApiDtoAsynqEmailDeliveryTaskAddResponseModelAnchor}
+        h3. InternalApiDtoAsynqEmailDeliveryTaskAddResponse
 
         
 
         
         ||Field Name||Required||Type||Description||Enum||Example||
          |code |(/) |{noformat:nopanel=true}Integer{noformat} | code:  0 成功; 非0失败; |  | 1
-         |data |(/) |{noformat:nopanel=true}_internal_api_http_dto.UserPortraitData{noformat} |  |  | null
+         |data |(/) |{noformat:nopanel=true}Object{noformat} | 数据data |  | null
          |msg |(/) |{noformat:nopanel=true}String{noformat} | 错误消息 |  | success
          |traceId |(/) |{noformat:nopanel=true}String{noformat} | traceId |  | null
          
-        {anchor:InternalApiHttpDtoExampleGetResponseModelAnchor}
-        h3. InternalApiHttpDtoExampleGetResponse
+        {anchor:InternalApiDtoExampleGetOneResponseModelAnchor}
+        h3. InternalApiDtoExampleGetOneResponse
 
         
 
         
         ||Field Name||Required||Type||Description||Enum||Example||
          |code |(/) |{noformat:nopanel=true}Integer{noformat} | code:  0 成功; 非0失败; |  | 1
-         |data |(/) |{noformat:nopanel=true}_internal_api_http_dto.UserPortraitData{noformat} |  |  | null
+         |data |(/) |{noformat:nopanel=true}_internal_api_dto.UserPortraitData{noformat} |  |  | null
          |msg |(/) |{noformat:nopanel=true}String{noformat} | 错误消息 |  | success
          |traceId |(/) |{noformat:nopanel=true}String{noformat} | traceId |  | null
          
-        {anchor:InternalApiHttpDtoExamplePostRequestModelAnchor}
-        h3. InternalApiHttpDtoExamplePostRequest
+        {anchor:InternalApiDtoExampleGetResponseModelAnchor}
+        h3. InternalApiDtoExampleGetResponse
+
+        
+
+        
+        ||Field Name||Required||Type||Description||Enum||Example||
+         |code |(/) |{noformat:nopanel=true}Integer{noformat} | code:  0 成功; 非0失败; |  | 1
+         |data |(/) |{noformat:nopanel=true}_internal_api_dto.UserPortraitData{noformat} |  |  | null
+         |msg |(/) |{noformat:nopanel=true}String{noformat} | 错误消息 |  | success
+         |traceId |(/) |{noformat:nopanel=true}String{noformat} | traceId |  | null
+         
+        {anchor:InternalApiDtoExamplePostRequestModelAnchor}
+        h3. InternalApiDtoExamplePostRequest
 
         
 
@@ -261,20 +406,32 @@ h2. Models
          |show_gpt_2 |(x) |{noformat:nopanel=true}String{noformat} | show_gpt_2 |  | null
          |token |(/) |{noformat:nopanel=true}String{noformat} | Token 鉴权token |  | sdfsdsdfsd
          
-        {anchor:InternalApiHttpDtoExamplePostResponseModelAnchor}
-        h3. InternalApiHttpDtoExamplePostResponse
+        {anchor:InternalApiDtoExamplePostResponseModelAnchor}
+        h3. InternalApiDtoExamplePostResponse
 
         
 
         
         ||Field Name||Required||Type||Description||Enum||Example||
          |code |(/) |{noformat:nopanel=true}Integer{noformat} | code:  0 成功; 非0失败; |  | 1
-         |data |(/) |{noformat:nopanel=true}_internal_api_http_dto.UserPortraitData{noformat} |  |  | null
+         |data |(/) |{noformat:nopanel=true}_internal_api_dto.UserPortraitData{noformat} |  |  | null
          |msg |(/) |{noformat:nopanel=true}String{noformat} | 错误消息 |  | success
          |traceId |(/) |{noformat:nopanel=true}String{noformat} | traceId |  | null
          
-        {anchor:InternalApiHttpDtoUserPortraitDataModelAnchor}
-        h3. InternalApiHttpDtoUserPortraitData
+        {anchor:InternalApiDtoGroupDeliveryTaskAddResponseModelAnchor}
+        h3. InternalApiDtoGroupDeliveryTaskAddResponse
+
+        
+
+        
+        ||Field Name||Required||Type||Description||Enum||Example||
+         |code |(/) |{noformat:nopanel=true}Integer{noformat} | code:  0 成功; 非0失败; |  | 1
+         |data |(/) |{noformat:nopanel=true}Object{noformat} | 数据data |  | null
+         |msg |(/) |{noformat:nopanel=true}String{noformat} | 错误消息 |  | success
+         |traceId |(/) |{noformat:nopanel=true}String{noformat} | traceId |  | null
+         
+        {anchor:InternalApiDtoUserPortraitDataModelAnchor}
+        h3. InternalApiDtoUserPortraitData
 
         
 
@@ -296,4 +453,23 @@ h2. Models
          |data |(/) |{noformat:nopanel=true}array[String]{noformat} | 生成id数组 |  | null
          |msg |(/) |{noformat:nopanel=true}String{noformat} | 错误消息 |  | success
          |traceId |(/) |{noformat:nopanel=true}String{noformat} | traceId |  | null
+         
+        {anchor:InternalModuleAuthApplicationServiceAuthPayloadModelAnchor}
+        h3. InternalModuleAuthApplicationServiceAuthPayload
+
+        
+
+        
+        ||Field Name||Required||Type||Description||Enum||Example||
+         |aud |(x) |{noformat:nopanel=true}String{noformat} |  |  | null
+         |audience |(x) |{noformat:nopanel=true}Integer{noformat} | Audience 当前时间 |  | null
+         |exp |(x) |{noformat:nopanel=true}Integer{noformat} |  |  | null
+         |expiresAt |(x) |{noformat:nopanel=true}Integer{noformat} | ExpiresAt  token 过期时间 |  | null
+         |iat |(x) |{noformat:nopanel=true}Integer{noformat} |  |  | null
+         |iss |(x) |{noformat:nopanel=true}String{noformat} |  |  | null
+         |jti |(x) |{noformat:nopanel=true}String{noformat} |  |  | null
+         |nbf |(x) |{noformat:nopanel=true}Integer{noformat} |  |  | null
+         |sub |(x) |{noformat:nopanel=true}String{noformat} |  |  | null
+         |uid |(x) |{noformat:nopanel=true}String{noformat} | UID 用户id |  | null
+         |username |(x) |{noformat:nopanel=true}String{noformat} | Username 用户名 |  | null
          
