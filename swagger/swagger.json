@@ -31,7 +31,7 @@
                     "200": {
                         "description": "请求成功",
                         "schema": {
-                            "$ref": "#/definitions/_internal_api_dto.GroupDeliveryTaskAddResponse"
+                            "$ref": "#/definitions/internal_api_dto.GroupDeliveryTaskAddResponse"
                         }
                     }
                 }
@@ -56,7 +56,7 @@
                     "200": {
                         "description": "请求成功",
                         "schema": {
-                            "$ref": "#/definitions/_internal_api_dto.AsynqEmailDeliveryTaskAddResponse"
+                            "$ref": "#/definitions/internal_api_dto.AsynqEmailDeliveryTaskAddResponse"
                         }
                     }
                 }
@@ -95,7 +95,7 @@
                     "200": {
                         "description": "请求成功",
                         "schema": {
-                            "$ref": "#/definitions/_internal_api_dto.AppJwtTokenSwgResponse"
+                            "$ref": "#/definitions/internal_api_dto.AppJwtTokenSwgResponse"
                         }
                     }
                 }
@@ -173,7 +173,7 @@
                     "200": {
                         "description": "请求成功",
                         "schema": {
-                            "$ref": "#/definitions/_internal_api_dto.ExampleGetResponse"
+                            "$ref": "#/definitions/internal_api_dto.ExampleGetResponse"
                         }
                     }
                 }
@@ -213,7 +213,7 @@
                     "200": {
                         "description": "请求成功",
                         "schema": {
-                            "$ref": "#/definitions/_internal_api_dto.ExampleGetOneResponse"
+                            "$ref": "#/definitions/internal_api_dto.ExampleGetOneResponse"
                         }
                     }
                 }
@@ -239,7 +239,7 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/_internal_api_dto.ExamplePostRequest"
+                            "$ref": "#/definitions/internal_api_dto.ExamplePostRequest"
                         }
                     }
                 ],
@@ -247,7 +247,7 @@
                     "200": {
                         "description": "请求成功",
                         "schema": {
-                            "$ref": "#/definitions/_internal_api_dto.ExamplePostResponse"
+                            "$ref": "#/definitions/internal_api_dto.ExamplePostResponse"
                         },
                         "headers": {
                             "Location": {
@@ -278,7 +278,7 @@
                     "200": {
                         "description": "请求成功",
                         "schema": {
-                            "$ref": "#/definitions/_internal_api_http.ResponseData"
+                            "$ref": "#/definitions/internal_api_http.ResponseData"
                         }
                     }
                 }
@@ -295,7 +295,7 @@
                     "200": {
                         "description": "请求成功",
                         "schema": {
-                            "$ref": "#/definitions/_internal_api_http.ResponseData"
+                            "$ref": "#/definitions/internal_api_http.ResponseData"
                         }
                     }
                 }
@@ -312,7 +312,7 @@
                     "200": {
                         "description": "请求成功",
                         "schema": {
-                            "$ref": "#/definitions/_internal_api_dto.UserScoreFindResponse"
+                            "$ref": "#/definitions/internal_api_dto.UserScoreFindResponse"
                         }
                     }
                 }
@@ -329,7 +329,7 @@
                     "200": {
                         "description": "请求成功",
                         "schema": {
-                            "$ref": "#/definitions/_internal_api_dto.UserScoreListResponse"
+                            "$ref": "#/definitions/internal_api_dto.UserScoreListResponse"
                         }
                     }
                 }
@@ -346,7 +346,7 @@
                     "200": {
                         "description": "请求成功",
                         "schema": {
-                            "$ref": "#/definitions/_internal_api_http.ResponseData"
+                            "$ref": "#/definitions/internal_api_http.ResponseData"
                         }
                     }
                 }
@@ -354,14 +354,14 @@
         }
     },
     "definitions": {
-        "_internal_api_dto.AppJwtTokenResponse": {
+        "internal_api_dto.AppJwtTokenResponse": {
             "type": "object",
             "properties": {
                 "jwtPayload": {
                     "description": "token payload 信息",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/_internal_module_auth_application_service.AuthPayload"
+                            "$ref": "#/definitions/internal_module_auth_application_service.AuthPayload"
                         }
                     ]
                 },
@@ -371,7 +371,7 @@
                 }
             }
         },
-        "_internal_api_dto.AppJwtTokenSwgResponse": {
+        "internal_api_dto.AppJwtTokenSwgResponse": {
             "type": "object",
             "required": [
                 "code",
@@ -386,7 +386,7 @@
                     "example": 1
                 },
                 "data": {
-                    "$ref": "#/definitions/_internal_api_dto.AppJwtTokenResponse"
+                    "$ref": "#/definitions/internal_api_dto.AppJwtTokenResponse"
                 },
                 "msg": {
                     "description": "错误消息",
@@ -399,7 +399,7 @@
                 }
             }
         },
-        "_internal_api_dto.AsynqEmailDeliveryTaskAddResponse": {
+        "internal_api_dto.AsynqEmailDeliveryTaskAddResponse": {
             "type": "object",
             "required": [
                 "code",
@@ -427,7 +427,7 @@
                 }
             }
         },
-        "_internal_api_dto.ExampleGetOneResponse": {
+        "internal_api_dto.ExampleGetOneResponse": {
             "type": "object",
             "required": [
                 "code",
@@ -442,7 +442,7 @@
                     "example": 1
                 },
                 "data": {
-                    "$ref": "#/definitions/_internal_api_dto.UserPortraitData"
+                    "$ref": "#/definitions/internal_api_dto.UserPortraitData"
                 },
                 "msg": {
                     "description": "错误消息",
@@ -455,7 +455,7 @@
                 }
             }
         },
-        "_internal_api_dto.ExampleGetResponse": {
+        "internal_api_dto.ExampleGetResponse": {
             "type": "object",
             "required": [
                 "code",
@@ -470,7 +470,7 @@
                     "example": 1
                 },
                 "data": {
-                    "$ref": "#/definitions/_internal_api_dto.UserPortraitData"
+                    "$ref": "#/definitions/internal_api_dto.UserPortraitData"
                 },
                 "msg": {
                     "description": "错误消息",
@@ -483,7 +483,7 @@
                 }
             }
         },
-        "_internal_api_dto.ExamplePostRequest": {
+        "internal_api_dto.ExamplePostRequest": {
             "type": "object",
             "required": [
                 "app_id",
@@ -535,7 +535,7 @@
                 }
             }
         },
-        "_internal_api_dto.ExamplePostResponse": {
+        "internal_api_dto.ExamplePostResponse": {
             "type": "object",
             "required": [
                 "code",
@@ -550,7 +550,7 @@
                     "example": 1
                 },
                 "data": {
-                    "$ref": "#/definitions/_internal_api_dto.UserPortraitData"
+                    "$ref": "#/definitions/internal_api_dto.UserPortraitData"
                 },
                 "msg": {
                     "description": "错误消息",
@@ -563,7 +563,7 @@
                 }
             }
         },
-        "_internal_api_dto.GroupDeliveryTaskAddResponse": {
+        "internal_api_dto.GroupDeliveryTaskAddResponse": {
             "type": "object",
             "required": [
                 "code",
@@ -591,7 +591,7 @@
                 }
             }
         },
-        "_internal_api_dto.UserPortraitData": {
+        "internal_api_dto.UserPortraitData": {
             "type": "object",
             "properties": {
                 "country": {
@@ -612,7 +612,7 @@
                 }
             }
         },
-        "_internal_api_dto.UserScoreFindResponse": {
+        "internal_api_dto.UserScoreFindResponse": {
             "type": "object",
             "required": [
                 "code",
@@ -627,7 +627,7 @@
                     "example": 1
                 },
                 "data": {
-                    "$ref": "#/definitions/_internal_module_mockv2_application_entity.UserScore"
+                    "$ref": "#/definitions/internal_module_mockv2_application_entity.UserScore"
                 },
                 "msg": {
                     "description": "错误消息",
@@ -640,7 +640,7 @@
                 }
             }
         },
-        "_internal_api_dto.UserScoreListResponse": {
+        "internal_api_dto.UserScoreListResponse": {
             "type": "object",
             "required": [
                 "code",
@@ -657,7 +657,7 @@
                 "data": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/_internal_module_mockv2_application_entity.UserScore"
+                        "$ref": "#/definitions/internal_module_mockv2_application_entity.UserScore"
                     }
                 },
                 "msg": {
@@ -671,7 +671,7 @@
                 }
             }
         },
-        "_internal_api_http.ResponseData": {
+        "internal_api_http.ResponseData": {
             "type": "object",
             "required": [
                 "code",
@@ -699,7 +699,7 @@
                 }
             }
         },
-        "_internal_module_auth_application_service.AuthPayload": {
+        "internal_module_auth_application_service.AuthPayload": {
             "type": "object",
             "properties": {
                 "aud": {
@@ -741,7 +741,7 @@
                 }
             }
         },
-        "_internal_module_mockv2_application_entity.UserScore": {
+        "internal_module_mockv2_application_entity.UserScore": {
             "type": "object",
             "properties": {
                 "create_time": {

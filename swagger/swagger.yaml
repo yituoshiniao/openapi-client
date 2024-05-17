@@ -1,23 +1,23 @@
 basePath: /goodsCenterLogic
 definitions:
-  _internal_api_dto.AppJwtTokenResponse:
+  internal_api_dto.AppJwtTokenResponse:
     properties:
       jwtPayload:
         allOf:
-        - $ref: '#/definitions/_internal_module_auth_application_service.AuthPayload'
+        - $ref: '#/definitions/internal_module_auth_application_service.AuthPayload'
         description: token payload 信息
       token:
         description: Token jwt token
         type: string
     type: object
-  _internal_api_dto.AppJwtTokenSwgResponse:
+  internal_api_dto.AppJwtTokenSwgResponse:
     properties:
       code:
         description: 'code:  0 成功; 非0失败;'
         example: 1
         type: integer
       data:
-        $ref: '#/definitions/_internal_api_dto.AppJwtTokenResponse'
+        $ref: '#/definitions/internal_api_dto.AppJwtTokenResponse'
       msg:
         description: 错误消息
         example: success
@@ -31,7 +31,7 @@ definitions:
     - msg
     - traceId
     type: object
-  _internal_api_dto.AsynqEmailDeliveryTaskAddResponse:
+  internal_api_dto.AsynqEmailDeliveryTaskAddResponse:
     properties:
       code:
         description: 'code:  0 成功; 非0失败;'
@@ -52,14 +52,14 @@ definitions:
     - msg
     - traceId
     type: object
-  _internal_api_dto.ExampleGetOneResponse:
+  internal_api_dto.ExampleGetOneResponse:
     properties:
       code:
         description: 'code:  0 成功; 非0失败;'
         example: 1
         type: integer
       data:
-        $ref: '#/definitions/_internal_api_dto.UserPortraitData'
+        $ref: '#/definitions/internal_api_dto.UserPortraitData'
       msg:
         description: 错误消息
         example: success
@@ -73,14 +73,14 @@ definitions:
     - msg
     - traceId
     type: object
-  _internal_api_dto.ExampleGetResponse:
+  internal_api_dto.ExampleGetResponse:
     properties:
       code:
         description: 'code:  0 成功; 非0失败;'
         example: 1
         type: integer
       data:
-        $ref: '#/definitions/_internal_api_dto.UserPortraitData'
+        $ref: '#/definitions/internal_api_dto.UserPortraitData'
       msg:
         description: 错误消息
         example: success
@@ -94,7 +94,7 @@ definitions:
     - msg
     - traceId
     type: object
-  _internal_api_dto.ExamplePostRequest:
+  internal_api_dto.ExamplePostRequest:
     properties:
       app_id:
         description: AppID 应用id
@@ -142,14 +142,14 @@ definitions:
     - question
     - token
     type: object
-  _internal_api_dto.ExamplePostResponse:
+  internal_api_dto.ExamplePostResponse:
     properties:
       code:
         description: 'code:  0 成功; 非0失败;'
         example: 1
         type: integer
       data:
-        $ref: '#/definitions/_internal_api_dto.UserPortraitData'
+        $ref: '#/definitions/internal_api_dto.UserPortraitData'
       msg:
         description: 错误消息
         example: success
@@ -163,7 +163,7 @@ definitions:
     - msg
     - traceId
     type: object
-  _internal_api_dto.GroupDeliveryTaskAddResponse:
+  internal_api_dto.GroupDeliveryTaskAddResponse:
     properties:
       code:
         description: 'code:  0 成功; 非0失败;'
@@ -184,7 +184,7 @@ definitions:
     - msg
     - traceId
     type: object
-  _internal_api_dto.UserPortraitData:
+  internal_api_dto.UserPortraitData:
     properties:
       country:
         description: 国家
@@ -199,14 +199,14 @@ definitions:
         description: 是否为VIP，0/1
         type: integer
     type: object
-  _internal_api_dto.UserScoreFindResponse:
+  internal_api_dto.UserScoreFindResponse:
     properties:
       code:
         description: 'code:  0 成功; 非0失败;'
         example: 1
         type: integer
       data:
-        $ref: '#/definitions/_internal_module_mockv2_application_entity.UserScore'
+        $ref: '#/definitions/internal_module_mockv2_application_entity.UserScore'
       msg:
         description: 错误消息
         example: success
@@ -220,7 +220,7 @@ definitions:
     - msg
     - traceId
     type: object
-  _internal_api_dto.UserScoreListResponse:
+  internal_api_dto.UserScoreListResponse:
     properties:
       code:
         description: 'code:  0 成功; 非0失败;'
@@ -228,7 +228,7 @@ definitions:
         type: integer
       data:
         items:
-          $ref: '#/definitions/_internal_module_mockv2_application_entity.UserScore'
+          $ref: '#/definitions/internal_module_mockv2_application_entity.UserScore'
         type: array
       msg:
         description: 错误消息
@@ -243,7 +243,7 @@ definitions:
     - msg
     - traceId
     type: object
-  _internal_api_http.ResponseData:
+  internal_api_http.ResponseData:
     properties:
       code:
         description: 'code:  0 成功; 非0失败;'
@@ -264,7 +264,7 @@ definitions:
     - msg
     - traceId
     type: object
-  _internal_module_auth_application_service.AuthPayload:
+  internal_module_auth_application_service.AuthPayload:
     properties:
       aud:
         type: string
@@ -293,7 +293,7 @@ definitions:
         description: Username 用户名
         type: string
     type: object
-  _internal_module_mockv2_application_entity.UserScore:
+  internal_module_mockv2_application_entity.UserScore:
     properties:
       create_time:
         type: integer
@@ -353,7 +353,7 @@ paths:
         "200":
           description: 请求成功
           schema:
-            $ref: '#/definitions/_internal_api_dto.GroupDeliveryTaskAddResponse'
+            $ref: '#/definitions/internal_api_dto.GroupDeliveryTaskAddResponse'
       summary: asynq-添加聚合任务
       tags:
       - asynq
@@ -369,7 +369,7 @@ paths:
         "200":
           description: 请求成功
           schema:
-            $ref: '#/definitions/_internal_api_dto.AsynqEmailDeliveryTaskAddResponse'
+            $ref: '#/definitions/internal_api_dto.AsynqEmailDeliveryTaskAddResponse'
       summary: asynq-add异步任务
       tags:
       - asynq
@@ -395,7 +395,7 @@ paths:
         "200":
           description: 请求成功
           schema:
-            $ref: '#/definitions/_internal_api_dto.AppJwtTokenSwgResponse'
+            $ref: '#/definitions/internal_api_dto.AppJwtTokenSwgResponse'
       summary: jwt-token生成及校验
       tags:
       - auth
@@ -447,7 +447,7 @@ paths:
         "200":
           description: 请求成功
           schema:
-            $ref: '#/definitions/_internal_api_dto.ExampleGetResponse'
+            $ref: '#/definitions/internal_api_dto.ExampleGetResponse'
       summary: get接口示例
       tags:
       - Example
@@ -474,7 +474,7 @@ paths:
         "200":
           description: 请求成功
           schema:
-            $ref: '#/definitions/_internal_api_dto.ExampleGetOneResponse'
+            $ref: '#/definitions/internal_api_dto.ExampleGetOneResponse'
       summary: getOne接口示例
       tags:
       - Example
@@ -493,7 +493,7 @@ paths:
         name: body
         required: true
         schema:
-          $ref: '#/definitions/_internal_api_dto.ExamplePostRequest'
+          $ref: '#/definitions/internal_api_dto.ExamplePostRequest'
       produces:
       - application/json
       responses:
@@ -510,7 +510,7 @@ paths:
               description: token2
               type: string
           schema:
-            $ref: '#/definitions/_internal_api_dto.ExamplePostResponse'
+            $ref: '#/definitions/internal_api_dto.ExamplePostResponse'
       summary: post 接口 示例
       tags:
       - Example
@@ -521,7 +521,7 @@ paths:
         "200":
           description: 请求成功
           schema:
-            $ref: '#/definitions/_internal_api_http.ResponseData'
+            $ref: '#/definitions/internal_api_http.ResponseData'
       summary: 添加数据
       tags:
       - user_score
@@ -532,7 +532,7 @@ paths:
         "200":
           description: 请求成功
           schema:
-            $ref: '#/definitions/_internal_api_http.ResponseData'
+            $ref: '#/definitions/internal_api_http.ResponseData'
       summary: 删除数据
       tags:
       - user_score
@@ -543,7 +543,7 @@ paths:
         "200":
           description: 请求成功
           schema:
-            $ref: '#/definitions/_internal_api_dto.UserScoreFindResponse'
+            $ref: '#/definitions/internal_api_dto.UserScoreFindResponse'
       summary: 查询一条数据
       tags:
       - user_score
@@ -554,7 +554,7 @@ paths:
         "200":
           description: 请求成功
           schema:
-            $ref: '#/definitions/_internal_api_dto.UserScoreListResponse'
+            $ref: '#/definitions/internal_api_dto.UserScoreListResponse'
       summary: 查询列表
       tags:
       - user_score
@@ -565,7 +565,7 @@ paths:
         "200":
           description: 请求成功
           schema:
-            $ref: '#/definitions/_internal_api_http.ResponseData'
+            $ref: '#/definitions/internal_api_http.ResponseData'
       summary: 更新数据
       tags:
       - user_score
